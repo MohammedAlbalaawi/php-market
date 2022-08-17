@@ -116,19 +116,18 @@
                                         JOIN market_db.categories on market_db.products.category_id = market_db.categories.id
                                         order by  market_db.products.id
                                         ");
-                                        $tagQuery->execute();
+            $tagQuery->execute();
 
-                                        // Returns tags titles and product ids
-                                        $allTags = $tagQuery->fetchAll();
-                                        foreach ($allTags as $tag) {
-                                            if ($product['id'] == $tag['prod_id']) {
-                                                ?>
+            // Returns tags titles and product ids
+            $allTags = $tagQuery->fetchAll();
+            foreach ($allTags as $tag) {
+                if ($product['id'] == $tag['prod_id']) {
+                    ?>
                                                 <span> <?= $tag['tag_title'] ?> </span>
                                                 <span class="text-primary"> • </span>
                                                 <?php
-                                            }
-                                        }
-                                        ?>
+                }
+            } ?>
 
                                     </div>
                                     <p class="text-truncate mb-4 mb-md-0">
@@ -158,7 +157,8 @@
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        <?php
+        } ?>
     </div>
 </section>
 </body>

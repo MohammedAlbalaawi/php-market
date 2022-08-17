@@ -1,4 +1,5 @@
 <?php
+
 $dsn = 'mysql:host=localhost:3306;dbname:market_db';
 $user = 'root';
 $pass = '%ronnie100';
@@ -9,7 +10,6 @@ try {
     $conn = new PDO($dsn, $user, $pass, $option);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //echo 'connected!';
-
-}catch (PDOException $e){
+} catch (PDOException $e) {
     echo $e->getMessage();
 }
